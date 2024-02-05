@@ -1,0 +1,140 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 500vh;
+  background: #ffffff;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1; /* Ensure canvas is behind the text */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.intro h1 {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  transform: translate(0, 0);
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  z-index: 2; /* Ensure text is on top of the canvas */
+}
+
+.intro p {
+  position: fixed;
+  bottom: 2%; /* Position from the bottom */
+  left: 2%; /* Position from the left */
+  font-size: 8px; /* Example font size */
+  color: rgb(0, 0, 0); /* Example color, matching the <h1> */
+  z-index: 2; /* Ensure text is on top of the canvas */
+}
+
+.overlay-text {
+  opacity: 0;
+  transition: opacity 0.5s ease-out; /* Smooth transition */
+  /* Ensure other positioning and styling as needed */
+  position: fixed;
+  top: 19%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  z-index: 2; /* Ensure text is on top of the canvas */
+}
+
+#overlayText2 {
+  top: 33%; /* Adjust distance */
+  right: 38%; /* Keep consistent or adjust as needed */
+}
+
+#overlayText3 {
+  top: 48%; /* Further down */
+  right: 38%; /* Keep consistent or adjust as needed */
+}
+
+#overlayText4 {
+  top: 62%; /* Even further down */
+  right: 38%; /* Keep consistent or adjust as needed */
+}
+
+
+@media (min-width: 1024px) {
+  .overlay-text {
+    top: 23.5%;
+    right: 38%;
+    transform: translate(0, -50%); /* Adjust if needed for your design */
+    /* Keep font size, color, and other properties as required */
+  }
+  #overlayText2 {
+    top: 37%;
+    right: 38%; /* Desktop position */
+  }
+  
+  #overlayText3 {
+    top: 50.5%;
+    right: 38%; /* Desktop position */
+  }
+  
+  #overlayText4 {
+    top: 64.2%;
+    right: 38%; /* Desktop position */
+  }
+  
+}
+
+@media (max-width: 767px) {
+  .overlay-text {
+    top: 20%;
+    right: 7.5%; /* Mobile-specific positioning */
+    font-size: 11px;
+  }
+  #overlayText2 {
+    top: 35.5%;
+    right: 5%; /* Mobile position */
+    font-size: 11px;
+  }
+
+  #overlayText3 {
+    top: 50.6%;
+    right: 3%; /* Mobile position */
+    font-size: 11px;
+  }
+
+  #overlayText4 {
+    top: 66%;
+    right: -6%; /* Mobile position */
+    font-size: 11px;
+  }
+}
+
+.overlay-text {
+  /* Existing styles */
+  padding: 1px 10px; /* Adjust padding as needed for the pill shape */
+  border: 2px solid transparent; /* Start with a transparent border */
+  border-radius: 50px; /* Creates the pill shape */
+  background-color: black; /* Black fill initially */
+  color: white; /* White text initially */
+  cursor: pointer; /* Indicates it's clickable or hoverable */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for colors and border */
+}
+
+/* Hover styles for desktop */
+.overlay-text:hover {
+  background-color: white; /* White fill on hover */
+  color: black; /* Black text on hover */
+  border-color: black; /* Black border on hover */
+}
